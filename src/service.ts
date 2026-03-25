@@ -5,6 +5,17 @@ import cripto from "crypto";
 export type MpesaKeys = Omit<MpesaConfig, "serviceProviderCode">
 
 
+interface MpesaResponse {
+  output_ResponseCode: string
+  output_ResponseDesc: string,
+  output_TransactionID: string,
+  output_ConversationID: string,
+  output_ThirdPartyReference: string
+}
+
+
+
+
 export class Service {
     private publickey: string;
     private apikey: string;
@@ -25,9 +36,9 @@ export class Service {
 /**
  * Sends the payment request to the M-Pesa API.
  * @param {PaymentData} data - The payment details.
- * @returns {Promise<any>} - The API response data.89
+ * @returns {Promise<MpesaResponse>} - The API response data.
  */
-async send(data: PaymentData): Promise<any> {
+async send(data: PaymentData): Promise<MpesaResponse> {
     console.log("Initiating payment request:", data.input_ThirdPartyReference);
 
     try {

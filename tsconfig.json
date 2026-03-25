@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    /* Layout do Projeto */
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    /* Configurações de Ambiente */
+    "module": "nodenext",
+    "target": "esnext",
+    "moduleDetection": "force",
+    
+    /* Outras Saídas */
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    /* Verificação de Tipos (Segurança Máxima) */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "skipLibCheck": true,
+
+    /* Estilo e Modernidade */
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

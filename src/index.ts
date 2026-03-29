@@ -11,7 +11,7 @@ if(!MPESA_PUBLIC_KEY || !MPESA_API_KEY) {
 const client = new Client({
     publickey: MPESA_PUBLIC_KEY,
     apikey: MPESA_API_KEY,
-    serviceProviderCode: "serviceProviderCode"
+    serviceProviderCode: "171717"
 })
 
 client.c2bPayment({
@@ -21,5 +21,13 @@ client.c2bPayment({
     input_ThirdPartyReference: "thirdPartyReference",
     input_ServiceProviderCode: 171717
 })
+
+// client.b2cPayment({
+//     input_CustomerMSISDN: 258842211075,
+//     input_Amount: 100,
+//     input_TransactionReference: "T12344C",
+//     input_ThirdPartyReference: "11114",
+//     input_ServiceProviderCode: 171717
+// })
 
 

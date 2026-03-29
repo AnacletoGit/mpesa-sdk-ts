@@ -1,4 +1,4 @@
-import { Service } from "./service.js";
+import { Service, type QueryData, type ReversalData } from "./service.js";
 
 
 
@@ -27,28 +27,35 @@ export class Client {
         });
     }
 
-    c2bPayment(data: PaymentData) {
 
-
-
-
-
-
-        this.service.send(data);
+    async c2bPayment(data: PaymentData) {
+        
+        return await this.service.send(data);
         
     }
 
 
+    async b2cPayment(data: PaymentData) {
+        return await this.service.receive(data);
+    }
+
+
+    async b2bPayment(data: PaymentData) {
+        return await this.service.businessBusiness(data);
+    }
 
 
 
+    async queryTransaction(q: QueryData){
 
+        return await this.service.queryTransaction(q);
 
+    }
 
+    async reversalQuery(r: ReversalData) {
 
-    
-
-
+        return await this.service.reversalQuery(r);
+    }
 
 
 
